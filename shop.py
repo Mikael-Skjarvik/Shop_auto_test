@@ -7,7 +7,7 @@ import time
 
 
 
-driver = webdriver.Chrome(executable_path="X:\Driver\chromedriver")
+driver = webdriver.Chrome()
 driver.maximize_window()
 
 driver.implicitly_wait(3)
@@ -185,7 +185,6 @@ driver.execute_script("window.scrollBy(0, 300);")
 time.sleep(3)
 check_payments = driver.find_element_by_id("payment_method_cheque")
 check_payments.click()
-# place_order = driver.find_element_by_id("place_order")
 place_order = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "place_order")))
 place_order.click()
 thank_you_element = WebDriverWait(driver, 10).until(EC.text_to_be_present_in_element((By.CLASS_NAME, "woocommerce-thankyou-order-received"), "Thank you. Your order has been received."))
