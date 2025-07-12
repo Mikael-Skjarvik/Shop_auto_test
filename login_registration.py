@@ -7,7 +7,7 @@ import time
 
 
 
-driver = webdriver.Chrome(executable_path="X:\Driver\chromedriver")
+driver = webdriver.Chrome()
 driver.maximize_window()
 
 driver.implicitly_wait(3)
